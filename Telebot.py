@@ -141,7 +141,8 @@ def check_word(message):
             if db_bot.check_word(message.from_user.id, message.text) is True:
                 db_bot.make_progress_study(message.from_user.id, target_word)
             else:
-                db_bot.add_word(message.from_user.id, target_word, target_word_trans, get_example(target_word_trans))
+                db_bot.add_word(message.from_user.id, target_word, target_word_trans, 
+                                get_example(target_word_trans))
         else:
             bot.send_message(message.chat.id, text=f'Неверно! Попробуйте другой вариант ответа')
 
@@ -154,7 +155,8 @@ def add_word_greet(message):
     markup_addition = types.ReplyKeyboardMarkup(resize_keyboard=True)
     back_menu_btn = types.KeyboardButton('Назад в меню')
     markup_addition.add(back_menu_btn)
-    bot.send_message(message.chat.id, text='Введите слово, которое хотите добавить', reply_markup=markup_addition)
+    bot.send_message(message.chat.id, text='Введите слово, которое хотите добавить', 
+                     reply_markup=markup_addition)
     return message.text
 
 
