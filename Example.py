@@ -6,7 +6,7 @@ url = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
 
 def get_example(word):
     """Функция получения примера использования слова из сервиса dictionaryapi. Функция недоработана!
-    Из-за дебильного пострения ответов от сервиса блоки 'example' находятся в разных частях ответа и их надо вылавливать"""
+    Из-за пострения ответов от сервиса блоки 'example' находятся в разных частях ответа и их надо вылавливать"""
     word_example = requests.get(f'{url}{word}').json()[0]['meanings']
     examples_list = []
     for i in range(len(word_example)):
