@@ -1,3 +1,11 @@
+"""
+Модуль Example отвечает за поиск значения слова в dictionaryapi
+
+----
+
+В модуле импортированы: request, pprint
+
+"""
 import requests
 from pprint import pprint
 
